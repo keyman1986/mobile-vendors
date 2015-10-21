@@ -77,7 +77,7 @@ $(function() {
 			accessURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + userCords.latitude + "&lng=" + userCords.longitude;
 		}
 		
-		accessURL = "http://localhost:56188/api/vendors?";
+		accessURL = "/api/vendors?";
 
 			//Use the zip code and return all market ids in area.
 			$.ajax({
@@ -86,7 +86,6 @@ $(function() {
 				url: accessURL,
 				dataType: 'json',
 				success: function (data) {
-					debugger;
 					 $.each(data, function (i, val) {
 						 
 						marketId.push(val.id);
@@ -104,7 +103,7 @@ $(function() {
 							contentType: "application/json; charset=utf-8",
 							// submit a get request to the restful service mktDetail.
 							//url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + v,
-							url: "http://localhost:56188/api/vendors?id=" + v,
+							url: "/api/vendors?id=" + v,
 							dataType: 'json',
 							success: function (data) {
 

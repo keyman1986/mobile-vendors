@@ -189,6 +189,8 @@
     <Content Include="assets\plugins\jquery-scrollTo\LICENSE" />
     <Content Include="assets\plugins\jquery-scrollTo\README.md" />
     <Content Include="assets\plugins\jquery-scrollTo\scrollTo.jquery.json" />
+    <None Include="Properties\PublishProfiles\mobile-vendors - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-vendors - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -198,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
