@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -6,7 +6,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>Mobile Food Vendors</title>
+    <title>Mobile Vendors</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,13 +32,15 @@
 <body data-spy="scroll" ng-controller="MainController as vm">
 
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-55786602-1', 'auto');
-		ga('send', 'pageview');
+        ga('create', 'UA-55786602-1', 'auto');
+        ga('send', 'pageview');
     </script>
 
     <!-- ******HEADER****** -->
@@ -78,45 +80,52 @@
         </div>
     </header>
     <!--//header-->
-
     <!-- ******PROMO****** -->
     <section id="promo" class="promo section offset-header">
         <div class="container text-center">
             <h2 class="title">Mobile Fo<span class="highlight">od Vendors</span></h2>
-            <p class="intro">Food vendor finding site.
-                <br>Never be without that tasty street food again!</p>
+            <p class="intro">
+                Food vendor finding site.
+                <br>Never be without that tasty street food again!
+            </p>
             <br>
             <br>
     </section>
     <!--//promo-->
-
     <!-- ******Map****** -->
     <section id="map" class="map section outer-div">
         <div id="control" class="row">
-            <label class="col-md-3">Food trucks:
+            <label class="col-md-3">
+                Food trucks:
                 <input type="checkbox" ng-model="vm.foodTruck">
             </label>
-            <label class="col-md-3">Ice cream trucks:
+            <label class="col-md-3">
+                Ice cream trucks:
                 <input type="checkbox" ng-model="vm.iceCream">
             </label>
-            <label class="col-md-3">Shaved Ice Shacks:
+            <label class="col-md-3">
+                Shaved Ice Shacks:
                 <input type="checkbox" ng-model="vm.shavedIce">
             </label>
-            <label class="col-md-3">Emission Tests:
+            <label class="col-md-3">
+                Emission Tests:
                 <input type="checkbox" ng-model="vm.emissions">
             </label>
         </div>
         <div class="row inner-div">
             <form method="get" id="chooseZip">
                 <button type="submit" class="btns btn btn-cta-secondary col-md-6 mapInterface" href="">Use current location</button>
-                <button type="button" id="searchZip" class="btns btn btn-cta-primary col-md-6 mapInterface" href="">Search by Zip Code</div>
-        <div class="clear"></div>
-        <div class="zipSearch">
-            <input id="textZip" class="form-control" type="text" name="zip" placeholder="enter your zip code" autofocus>
-            <button type="submit" class="btns btn btn-cta-primary">Search</button>
-        </div>
-        <div class="clear"></div>
-        </form>
+                <button type="button" id="searchZip" class="btns btn btn-cta-primary col-md-6 mapInterface" href="">
+                    Search by Zip Code
+                </button>
+                <div class="clear"></div>
+                <div class="zipSearch">
+                    <input id="textZip" class="form-control" type="text" name="zip" placeholder="enter your zip code" autofocus>
+                    <button type="submit" class="btns btn btn-cta-primary">Search</button>
+                </div>
+                <div class="clear"></div>
+
+            </form>
         </div>
         <br>
         <div class="row">
@@ -131,10 +140,9 @@
                 <p>4</p>
                 <p>5</p>
             </div>
-       </div>
+        </div>
     </section>
     <!--//Map-->
-
     <!-- ******User Login****** -->
     <div class="cd-user-modal" ng-show="vm.showloginForm">
         <!-- this is the entire modal form, including the background -->
@@ -213,29 +221,28 @@
             </div>
             <!-- cd-signup -->
             <!--
-			<div id="cd-reset-password" ng-if="vm.loginView === 'reset'"> 
-				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+            <div id="cd-reset-password" ng-if="vm.loginView === 'reset'">
+                <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
 
-				<form class="cd-form">
-					<p class="fieldset">
-						<label class="image-replace cd-email" for="reset-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
-						<span class="cd-error-message">Error message here!</span>
-					</p>
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
 
-					<p class="fieldset">
-						<input class="full-width has-padding" type="submit" value="Reset password">
-					</p>
-				</form>
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Reset password">
+                    </p>
+                </form>
 
-				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
-			</div> -->
+                <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+            </div> -->
             <a href="#0" class="cd-close-form">Close</a>
         </div>
         <!-- cd-user-modal-container -->
     </div>
     <!-- cd-user-modal -->
-
     <!-- ******FEATURES****** -->
     <section id="features" class="features section">
         <div class="container text-center">
@@ -244,7 +251,6 @@
         <!--//container-->
     </section>
     <!--//features-->
-
     <!-- ******Support****** -->
     <section id="support" class="license section">
         <div class="container">
@@ -252,15 +258,17 @@
                 <h2 class="title text-center">Support Us</h2>
                 <div class="cta-container">
                     <div class="speech-bubble">
-                        <p class="intro">If you are feeling generous and want to show your support to the RingRingTeam, you can buy us a beer
-                            or coffee via the PayPal donate button below. :)</p>
+                        <p class="intro">
+                            If you are feeling generous and want to show your support to the RingRingTeam, you can buy us a beer
+                            or coffee via the PayPal donate button below. :)
+                        </p>
                         <div class="icon-holder  text-center"><i class="fa fa-smile-o"></i></div>
                     </div>
                     <!--//speech-bubble-->
                     <div class="btn-container  text-center">
                         <!--//You need to generate your own PayPal button - https://www.paypal.com/us/cgi-bin/?cmd=_donate-intro-outside -->
                         <!--PayPal generated code starts-->
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <form action="#" method="post" target="_top">
                             <input type="hidden" name="cmd" value="_s-xclick">
                             <input type="hidden" name="hosted_button_id" value="Y46LJNXGAVVWW">
                             <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
@@ -274,9 +282,9 @@
                 <!--//cta-container-->
                 <div class="outer-div">
                     <ul class="social-icons list-inline">
-                        <li><a href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://www.facebook.com/3rdwavethemes" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li class="last"><a href="mailto: hello@3rdwavemedia.com"><i class="fa fa-envelope"></i></a></li>
+                        <li><a href="https://twitter.com/mobilevendors" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/mobilevendors" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="last"><a href="mailto: hello@mobilevendors.com"><i class="fa fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -285,63 +293,51 @@
         <!--//container-->
     </section>
 
-    <!-- ******CONTACT****** -->
+    <!-- ******MOBILE VENDORS CONTACT****** -->
     <section id="contact" class="contact section has-pattern">
         <div class="container">
             <div class="contact-inner">
                 <h2 class="title  text-center">Contact</h2>
+                <p class="intro  text-center">We hope you find this site useful. <br />Feel free to get in touch if you have any questions or suggestions.</p>
                 <div class="author-message">
                     <div class="profile">
                         <img class="img-responsive" src="assets/images/The_A-Team.jpg" alt="" />
-                    </div>
-                    <!--//profile-->
+                    </div><!--//profile-->
                     <div class="speech-bubble">
                         <h3 class="sub-title">Want to get more discounts and freebies in the future?</h3>
-                        <p>We tweet about locations, deals and discounts at <a href="https://twitter.com/mobilefoodvendors"
-                            target="_blank">@mobilefoodvendors</a>
-                            <p>If you like what we do, you can follow us on twitter and we will keep you informed about our
-                                next apps and updates to this one :)</p>
-                            <p><strong>[Tip for users]:</strong> Let us know what features you want and if you have other app
-                                ideas!
-                            </p>
-                            <div class="source">
-                                <span class="name"><a href="https://twitter.com/mobilefoodvendores" target="_blank">RingRingTeam</a></span>
-                                <br />
-                                <span class="title">Software Developers</span>
-                            </div>
-                            <!--//source-->
-                    </div>
-                    <!--//speech-bubble-->
-                </div>
-                <!--//author-message-->
+                        <p>We tweet about locations, deals and discounts at <a href="https://twitter.com/mobilevendors" target="_blank">@mobilevendors</a>
+                        <p>If you like what we do, you can follow us on twitter and we will keep you informed about our next apps and updates to this one :)</p>
+                        <p><strong>[Tip for users]:</strong> Let us know what features you want and if you have other app ideas!</p>
+                        <div class="source">
+                            <span class="name"><a href="https://twitter.com/mobilevendors" target="_blank">RingRingTeam</a></span>
+                            <br />
+                            <span class="title">Software Developers</span>
+                        </div><!--//source-->
+                    </div><!--//speech-bubble-->
+                </div><!--//author-message-->
                 <div class="clearfix"></div>
                 <div class="info text-center">
                     <h4 class="sub-title">Get Connected</h4>
                     <ul class="social-icons list-inline">
-                        <li><a href="https://twitter.com/mobilefoodvendors" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="https://www.facebook.com/mobilefoodvendors" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <!--<li><a href="https://www.linkedin.com/in/xiaoying"><i class="fa fa-linkedin"></i></a></li>-->
-                        <li><a href="http://instagram.com/mobilefoodvendors"><i class="fa fa-instagram"></i></a></li>
-                        <!--<li><a href="https://dribbble.com/Xiaoying"><i class="fa fa-dribbble"></i></a></li>-->
-                        <li class="last"><a href="mailto: contact@mobilefoodvendors.com"><i class="fa fa-envelope"></i></a></li>
+                        <li><a href="https://twitter.com/mobilevendors" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/mobilevendors" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/mobilevendors"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="http://instagram.com/mobilevendors"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://dribbble.com/mobilevendors"><i class="fa fa-dribbble"></i></a></li>
+                        <li class="last"><a href="mailto: hello@mobilevendors.com"><i class="fa fa-envelope"></i></a></li>
                     </ul>
-                </div>
-                <!--//info-->
-            </div>
-            <!--//contact-inner-->
-        </div>
-        <!--//container-->
-    </section>
-    <!--//contact-->
+                </div><!--//info-->
+            </div><!--//contact-inner-->
+        </div><!--//container-->
+    </section><!--//contact-->
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> at <a href="http://www.boisecodeworks.com" target="_blank">RingRingTeam</a> for hungry people</small>
-    </div>
-    <!--//container-->
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> at <a href="https://www.facebook.com/mobilevendors" target="_blank">RingRingTeam</a> for hungry people</small>
+        </div>
+        <!--//container-->
     </footer>
     <!--//footer-->
-
     <!-- Javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
