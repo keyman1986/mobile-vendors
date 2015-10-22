@@ -1,0 +1,15 @@
+﻿body {
+}
+input {
+	border-radius: 5px;
+	padding: 10px;
+	background: lightgrey;
+	margin: 5px;
+}
+.login {
+	margin: auto;
+	text-align: center;
+}
+.modal .modal-dialog {
+  width: 30%; /* or whatever you wish */
+}
