@@ -11,7 +11,13 @@ input {
 	text-align: center;
 }
 .modal .modal-dialog {
-  width: 30%; /* or whatever you wish */
+    width: 25%; /* or whatever you wish */
+    text-align: center;
+}
+.frgtpswrd {
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 .inputbox {
     text-align: center;
