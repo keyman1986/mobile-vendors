@@ -13,3 +13,10 @@ input {
 .modal .modal-dialog {
   width: 30%; /* or whatever you wish */
 }
+.inputbox {
+    text-align: center;
+}
+.loginBtn {
+    text-align: right;
+    padding-right: 4em;
+}
