@@ -37,10 +37,11 @@ namespace MV.WebApi.Controllers
                 Id = 1002,
                 Name = "Archie's Place",
                 Address = "207 S 10th St, Boise, ID 83702",
-                GoogleLink = "https://www.google.com/maps/place/207+S+10th+St,+Boise,+ID+83702/@43.6160037,-116.2088137,17z/data=!3m1!4b1!4m2!3m1!1s0x54aef8e5a39c02d1:0xf53cbd3aed5854a",
+                GoogleLink = "http://maps.google.com/?q=43.6160037%2C%20-116.2088137%20(%22Caldwell+Farmers+Market%22)",
+                             //"https://www.google.com/maps/place/207+S+10th+St,+Boise,+ID+83702/@43.6160037,-116.2088137,17z/data=!3m1!4b1!4m2!3m1!1s0x54aef8e5a39c02d1:0xf53cbd3aed5854a",
                 Website = "http://archies-place.com/",
                 Products =
-                    "Vegan, Vegetarian,  friendly items; Soups; Griddled Cheese; Chicken meals; Pork meals;",
+                    "Vegan, Vegetarian, and Gluten Free friendly items; Soups; Griddled Cheese; Chicken meals; Pork meals;",
                 Schedule = "05/13/2015 to 09/23/2015 Wed: 3:00 PM-7:00 PM;<br> <br> <br> "
             }
 
