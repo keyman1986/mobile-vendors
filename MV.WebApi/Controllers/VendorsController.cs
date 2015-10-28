@@ -31,6 +31,18 @@ namespace MV.WebApi.Controllers
                 Products =
                     "Baked goods; Cheese and/or dairy products; Crafts and/or woodworking items; Cut flowers; Eggs; Fresh fruit and vegetables; Fresh and/or dried herbs; Honey; Canned or preserved fruits, vegetables, jams, jellies, preserves, salsas, pickles, dried fruit, etc.; Nuts; Plants in containers; Prepared foods (for immediate consumption); Soap and/or body care products; Trees, shrubs; Wine, beer, hard cider",
                 Schedule = "05/13/2015 to 09/23/2015 Wed: 3:00 PM-7:00 PM;<br> <br> <br> "
+            },
+            new Vendor()
+            {
+                Id = 1002,
+                Name = "Archie's Place",
+                Address = "207 S 10th St, Boise, ID 83702",
+                GoogleLink = "http://maps.google.com/?q=43.6160037%2C%20-116.2088137%20(%22Caldwell+Farmers+Market%22)",
+                             //"https://www.google.com/maps/place/207+S+10th+St,+Boise,+ID+83702/@43.6160037,-116.2088137,17z/data=!3m1!4b1!4m2!3m1!1s0x54aef8e5a39c02d1:0xf53cbd3aed5854a",
+                Website = "http://archies-place.com/",
+                Products =
+                    "Vegan, Vegetarian, and Gluten Free friendly items; Soups; Griddled Cheese; Chicken meals; Pork meals;",
+                Schedule = "05/13/2015 to 09/23/2015 Wed: 3:00 PM-7:00 PM;<br> <br> <br> "
             }
 
         };
