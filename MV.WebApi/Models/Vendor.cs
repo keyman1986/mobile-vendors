@@ -15,6 +15,7 @@ namespace MV.WebApi.Models
         public string Products { get; set; }
         public string Schedule { get; set; }
         public VendorType VendorType { get; set; }
+        public string Website { get; set; }
 
     }
 
