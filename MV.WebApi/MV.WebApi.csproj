@@ -49,6 +49,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -58,6 +62,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -86,11 +94,15 @@
     <Content Include="assets\images\favicon.png" />
     <Content Include="assets\images\The_A-Team.jpg" />
     <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\controllers\SignUpController.js" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\js\map.js" />
     <Content Include="assets\js\min\main-min.js" />
     <Content Include="assets\js\modal.js" />
+    <Content Include="assets\js\NewVendorApp.js" />
     <Content Include="assets\js\search.js" />
+    <Content Include="assets\js\services\signup.js" />
+    <Content Include="assets\js\views\signup.html" />
     <Content Include="assets\plugins\angular.min.js" />
     <Content Include="assets\plugins\bootstrap\css\bootstrap-theme.css" />
     <Content Include="assets\plugins\bootstrap\css\bootstrap-theme.min.css" />

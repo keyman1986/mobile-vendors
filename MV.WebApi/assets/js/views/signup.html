@@ -1,7 +1,5 @@
-<link href="assets/css/styles.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 <div class="panel-body" ng-controller="SignUpController">
-    <form id="add-vendor-form">
+    <form id="add-vendor-form" ng-submit="signup(vendor)">
         <div class="form-group">
             <label for="vendorname">Welcome to Roaming Vendors! Please fill this out to set up an account</label>
             <input type="text" class="form-control" name="username" id="input-username" placeholder="one-word username or email" ng-model="vendor.name"/> 
@@ -11,22 +9,21 @@
             <input type="text" class="form-control" name="bizname" id="input-bizname" placeholder="Name of your business" ng-model="vendor.bizname"/>
         </div>
         <div class="form-group">
-            <label for="vendortype" ng-model="vendor.vendortype">Type of vendor</label>
-                <select>
-                    <option value="food" ng-model="vendor.vendortype.food">Food</option>
-                    <option value="windshieldrepair" ng-model="vendor.vendortype.windshield">Windshield repair</option>
-                    <option value="emissionstesting" ng-model="vendor.type.emission">Emissions testing</option>
-                    <option value="fleamarket" ng-model="vendor.vendortype.flea">Flea market</option>
-                    <option value="other" ng-model="vendor.vendortype.other">Other</option>
+            <label for="vendortype">Type of vendor</label>
+                <select ng-model="vendor.vendortype">
+                    <option value="food">Food</option>
+                    <option value="windshieldrepair">Windshield repair</option>
+                    <option value="emissionstesting">Emissions testing</option>
+                    <option value="fleamarket">Flea market</option>
+                    <option value="other">Other</option>
                 </select>
         </div>
         <div class="form-group">
             <label for="city">City</label>
             <input type="text" class="form-control" name="city" id="vendorcity" placeholder="City" ng-model="vendor.city"/>
         </div>
-    <button type="button" class="btn btn-default" id="submitnewvendor"><span class="glyphicon glyphicon-plus-sign" onclick="VendorMaker()"></span>Create account</button>
-          </div>
+    <button type="submit" class="btn btn-default" id="submitnewvendor">
+        <span class="glyphicon glyphicon-plus-sign"></span>Create account
+    </button>
     </form>
 </div>
-<script>js/services/signup.js</script>
-<script></script>

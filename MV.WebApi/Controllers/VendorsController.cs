@@ -5,9 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using MV.WebApi.Models;
+using System.Web.Http.Cors;
 
 namespace MV.WebApi.Controllers
 {
+    [AllowAnonymous]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class VendorsController : ApiController
     {
         private Vendor[] _vendors = new Vendor[]

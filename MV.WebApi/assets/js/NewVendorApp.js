@@ -3,6 +3,6 @@ app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       controller: "SignUpController",
-      templateUrl: "assets/signup.html"
+      templateUrl: "assets/js/views/signup.html"
     })
 });
