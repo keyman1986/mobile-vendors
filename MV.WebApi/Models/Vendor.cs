@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 
 namespace MV.WebApi.Models
@@ -15,10 +16,21 @@ namespace MV.WebApi.Models
         public string Products { get; set; }
         public string Schedule { get; set; }
         public VendorType VendorType { get; set; }
-<<<<<<< HEAD
 
-=======
->>>>>>> 1fe97eb8fb29ef5cba95c63525b4cdbbe270db75
+        private int _idCount = 0; 
+
+        public Vendor(string name, string address = "", string googleLink = "", string website = "", string products = "", string schedule = "", VendorType vendorType = VendorType.FoodTruck)  
+        {
+            Id = _idCount++;
+            Name = name;
+            Address = address;
+            GoogleLink = googleLink;
+            Website = website;
+            Products = products;
+            Schedule = schedule;
+            VendorType = vendorType;
+        }
+
     }
 
 

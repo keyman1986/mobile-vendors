@@ -2,7 +2,7 @@ app.factory('VendorService', ['$http', function($http) {
 
     return {
         addVendor: function (vendor) {
-            return $http.post('https://mobile-vendors.azurewebsites.net/api/vendors', vendor)
+            return $http.post('/api/vendors/add', vendor)
                 .success(function (res) {
                     debugger
                 })
@@ -11,7 +11,7 @@ app.factory('VendorService', ['$http', function($http) {
                 })
         },
         getVendors: function () {
-            return $http.get('https://mobile-vendors.azurewebsites.net/api/vendors')
+            return $http.get('/api/vendors')
                 .success(function (res) {
                     debugger
                     return res.data;
