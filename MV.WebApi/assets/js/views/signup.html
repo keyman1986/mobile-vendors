@@ -1,0 +1,29 @@
+<div class="panel-body" ng-controller="SignUpController">
+    <form id="add-vendor-form" ng-submit="signup(vendor)">
+        <div class="form-group">
+            <label for="vendorname">Welcome to Roaming Vendors! Please fill this out to set up an account</label>
+            <input type="text" class="form-control" name="username" id="input-username" placeholder="one-word username or email" ng-model="vendor.name"/> 
+        </div>
+        <div class="form-group">
+            <label for="businessname">Business Name</label>
+            <input type="text" class="form-control" name="bizname" id="input-bizname" placeholder="Name of your business" ng-model="vendor.bizname"/>
+        </div>
+        <div class="form-group">
+            <label for="vendortype">Type of vendor</label>
+                <select ng-model="vendor.vendortype">
+                    <option value="food">Food</option>
+                    <option value="windshieldrepair">Windshield repair</option>
+                    <option value="emissionstesting">Emissions testing</option>
+                    <option value="fleamarket">Flea market</option>
+                    <option value="other">Other</option>
+                </select>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" id="vendorcity" placeholder="City" ng-model="vendor.city"/>
+        </div>
+    <button type="submit" class="btn btn-default" id="submitnewvendor">
+        <span class="glyphicon glyphicon-plus-sign"></span>Create account
+    </button>
+    </form>
+</div>
