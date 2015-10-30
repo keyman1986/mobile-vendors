@@ -5,6 +5,8 @@
         FoodTruck,
         SnowConeShack,
         IceCreamTruck,
-        Emissions
+        Emissions,
+        RockChipRepair,
+        BoothsTentsEvents,
     }
 }
