@@ -77,7 +77,7 @@ $(function() {
 			accessURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + userCords.latitude + "&lng=" + userCords.longitude;
 		}
 		
-		accessURL = "/api/vendors?";
+		accessURL = "https://mobile-vendor.firebaseio.com/vendorLocation";
 
 			//Use the zip code and return all market ids in area.
 			$.ajax({

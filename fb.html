@@ -1,0 +1,142 @@
+<html>
+<head>
+  <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/resources/tutorial/css/example.css">
+</head>
+<body>
+  
+<div class="example-base example-leaderboard l-demo-container">
+  <table id="leaderboardTable">
+    <tr>
+      <th>Vendor</th>
+      <th>Lat</th>
+      <th>Lon</th>
+    </tr>
+  </table>
+  <footer>
+    <input class="example-leaderboard-name" type="text" id="nameInput" placeholder="Enter a name">
+    <input class="example-leaderboard-score" type="text" id="latInput" placeholder="Lattitude">
+    <input class="example-leaderboard-score" type="text" id="lonInput" placeholder="Longitude">
+  </footer>
+</div>
+
+        <div class="row inner-div">
+            <form method="get" id="chooseZip">
+                <button type="submit" class="btns btn btn-cta-secondary col-md-6 mapInterface" href="">Use current location</button>
+                <button type="button" id="searchZip" class="btns btn btn-cta-primary col-md-6 mapInterface" href="">
+                    Search by Zip Code
+                </button>
+        <div class="clear"></div>
+        <div class="zipSearch">
+            <input id="textZip" class="form-control" type="text" name="zip" placeholder="enter your zip code" autofocus>
+            <button type="submit" class="btns btn btn-cta-primary">Search</button>
+        </div>
+        <div class="clear"></div>
+
+        </form>
+        </div>
+        <br>
+<div class="row">
+
+    <div class="container">
+      <form action="#" id="js-map-form">
+        <div class="form-group col-md-6">
+          <h1>I think the map will show up here</h1>
+        </div>
+      </form>
+    </div>
+       
+       
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDUQjTZztKXPnGzZH_-rqq5HWzdjlxwAQ"></script>
+  <script type="text/javascript" src="assets/js/google-map.js"></script>
+<script>
+  var LEADERBOARD_SIZE = 5;
+  
+  // Create our Firebase reference
+  var fb = new Firebase('https://mobile-vendor.firebaseio.com/vendorLocation');
+
+  // Keep a mapping of firebase locations to HTML elements, so we can move / remove elements as necessary.
+  var htmlForPath = {};
+
+  // Helper function that takes a new score snapshot and adds an appropriate row to our leaderboard table.
+  function handleScoreAdded(scoreSnapshot, prevScoreName) {
+    
+    var name = scoreSnapshot.val().name;
+    var lat = scoreSnapshot.val().lat;
+    var lon = scoreSnapshot.val().lon;
+    
+    var newScoreRow = $("<tr/>");
+    newScoreRow.append($("<td/>").append($("<em/>").text(name)));
+    newScoreRow.append($("<td/>").text(lat));
+    newScoreRow.append($("<td/>").text(lon));
+    
+    var gps = {"k":lat,"B":lon};
+    var text = name;
+    var marker = "assets/images/blue_Marker.png";
+    markPosition(positionForGPS(gps), text, marker);
+
+    // Store a reference to the table row so we can get it again later.
+    htmlForPath[scoreSnapshot.key()] = newScoreRow;
+
+    // Insert the new score in the appropriate place in the table.
+    if (prevScoreName === null) {
+      $("#leaderboardTable").append(newScoreRow);
+    }
+    else {
+      var lowerScoreRow = htmlForPath[prevScoreName];
+      lowerScoreRow.before(newScoreRow);
+    }
+  }
+
+  // Helper function to handle a score object being removed; just removes the corresponding table row.
+  function handleScoreRemoved(scoreSnapshot) {
+    var removedScoreRow = htmlForPath[scoreSnapshot.key()];
+    removedScoreRow.remove();
+    delete htmlForPath[scoreSnapshot.key()];
+  }
+
+  // Create a view to only receive callbacks for the last LEADERBOARD_SIZE scores
+  var scoreListView = fb.limitToLast(LEADERBOARD_SIZE);
+
+  // Add a callback to handle when a new score is added.
+  scoreListView.on('child_added', function (newScoreSnapshot, prevScoreName) {
+    handleScoreAdded(newScoreSnapshot, prevScoreName);
+  });
+
+  // Add a callback to handle when a score is removed
+  scoreListView.on('child_removed', function (oldScoreSnapshot) {
+    handleScoreRemoved(oldScoreSnapshot);
+  });
+
+  // Add a callback to handle when a score changes or moves positions.
+  var changedCallback = function (scoreSnapshot, prevScoreName) {
+    handleScoreRemoved(scoreSnapshot);
+    handleScoreAdded(scoreSnapshot, prevScoreName);
+  };
+  scoreListView.on('child_moved', changedCallback);
+  scoreListView.on('child_changed', changedCallback);
+
+  // When the user presses enter on scoreInput, add the score, and update the highest score.
+  $("#lonInput").keypress(function (e) {
+    if (e.keyCode == 13) {
+      var latVal = Number($("#latInput").val());
+      var lonVal = Number($("#lonInput").val());
+      var nameVal = $("#nameInput").val();
+      $("#latInput").val("");
+      $("#lonInput").val("");
+
+      if (nameVal.length === 0)
+        return;
+
+      var vendorLoc = fb.child(nameVal);
+
+      // Use setWithPriority to put the name / score in Firebase, and set the priority to be the score.
+      // name, lat, lon are column names in the database
+      vendorLoc.set({ name:nameVal, lat:latVal, lon:lonVal });
+    }
+  });
+</script>
+<!--<script type="text/javascript" src="assets/js/search.js"></script>-->
+</body>
+</html>
